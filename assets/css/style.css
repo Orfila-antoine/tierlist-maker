@@ -1,0 +1,83 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+  background: #47494e;
+}
+
+h1 {
+	font-style: italic;
+	font-weight: 100;
+  color: white;
+  margin-left: 2%;
+	padding-right: 1px;
+	text-align: left;
+}
+.row {
+	height: 96px;
+	border: solid 1px #dedede; /* the official color of smash */
+	border-bottom: 0;
+	text-align: left;
+}
+
+.rowPM {
+	height: 56px;
+}
+
+.last {
+	border-bottom: solid 1px #dedede;
+}
+
+input[type="text"] {
+	height: 94px;
+	width: 2%;
+	text-align: center;
+	border: none;
+	font-weight: 600;
+	margin: 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+input[type="text"].levelPM {
+	height: 54px;
+}
+
+.tier {
+	width: 90%;
+	height: 96px;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.placeholder4 {
+	height: 96px;
+	width: 96px;
+	background-color: #dedede;
+}
+
+.tier1 {
+	background-color: #ed6764;
+}
+.tier2 {
+	background-color: #f88157;
+}
+.tier3 {
+	background-color: #eae286;
+}
+.tier4 {
+	background-color: #8abc6e;
+}
+.tier5 {
+	background-color: #779fde;
+}
+.tier6 {
+	background-color: #627ee0;
+}
+.tier7 {
+	background-color: #c86acb;
+}
+
+#char4 {
+	width: 100%;
+	margin: 10px auto;
+}
