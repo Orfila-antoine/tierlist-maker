@@ -1,7 +1,7 @@
 <template>
   <div>
     <dropzone :destroyDropzone="false" :options="options" id="foo" ref="el"/>
-    <button v-on:click="test">test</button>
+    <button id="start-btn" class="nav-btn" v-on:click="submit">Start tier listing</button>
   </div>
 </template>
 
@@ -26,21 +26,24 @@
       Dropzone
     },
     methods: {
-      test: function () {
+      submit: function () {
         let files = this.$refs.el.getAcceptedFiles();
         files.forEach(file => {
           let newImage = {};
-          console.log(file);
+          // console.log(file);
           newImage.name = file.upload.filename.match(/([\w#]+)\./g)[0].replace('.', '');
           newImage.url = file.dataURL;
           if (this.$store.state.image.list[newImage.name] === undefined) {
             this.$store.commit('image/add', newImage);
           }
         });
+        this.$store.commit('image/setTitle', 'List');
         $nuxt.$router.push('/tier-list');
       }
     }
   }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

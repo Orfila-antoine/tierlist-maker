@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="/">IT'S TIME TO GO BACK</a>
+    <button id="goback-btn" class="nav-btn" style="float: left;" v-on:click="goback">IT'S TIME TO GO BACK</button>
     <h1>TIER LIST MAKER - {{ listName }}</h1>
     <div class="list-group row">
       <input type="text" value="S" class="tier1 level">
@@ -66,8 +66,13 @@
         });
       });
       this.images = this.$store.state.image.list;
+      this.listName = this.$store.state.image.title;
     },
-
+    methods: {
+      goback: function () {
+        $nuxt.$router.push('/');
+      }
+    }
   }
 </script>
 <style>

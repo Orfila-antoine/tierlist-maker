@@ -1,7 +1,6 @@
-
-
 export const state = () => ({
-  list: {}
+  list: {},
+  title: ''
 });
 
 export const mutations = {
@@ -11,4 +10,7 @@ export const mutations = {
   remove(state, {image}) {
     state.list[image.name] = null;
   },
+  setTitle(state, string) {
+    state.title = string;
+  }
 };
