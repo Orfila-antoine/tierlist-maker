@@ -27,6 +27,17 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: {color: '#3B8070'},
+
+  /**
+   * Vuex localstorage persistence
+   */
+  modules: [
+    ['nuxt-vuex-localstorage', {
+      mode: 'debug',
+      localStorage: ['localStorage', 'image']
+    }]
+  ],
+
   /*
   ** Build configuration
   */
