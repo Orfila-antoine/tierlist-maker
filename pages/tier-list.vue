@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="/">IT'S TIME TO GO BACK</a>
+    <a href="/">Go back to home page</a>
     <h1>TIER LIST MAKER - {{ listName }}</h1>
     <div class="list-group row">
       <input type="text" value="S" class="tier1 level">
@@ -41,34 +41,35 @@
 </template>
 
 <script>
-  import Sortable from 'sortablejs'
+    import Sortable from 'sortablejs'
 
-  export default {
-    data() {
-      return {
-        project: 'default',
-        listName: 'List',
-        images: {},
-      }
-    },
-    asyncData(context) {
-      return {
-        project: 'nuxt'
-      }
-    },
-    mounted: function () {
-      // Simple list
-      let rows = document.getElementsByClassName('sort');
-      Array.from(rows).forEach(row => {
-        new Sortable(row, {
-          group: 'shared', // set both lists to same group
-          animation: 500
-        });
-      });
-      this.images = this.$store.state.image.list;
-    },
+    export default {
+        data() {
+            return {
+                project: 'default',
+                listName: 'List',
+                images: {},
+            }
+        },
+        asyncData(context) {
+            return {
+                project: 'nuxt'
+            }
+        },
+        mounted: function () {
+            // Simple list
+            let rows = document.getElementsByClassName('sort');
+            Array.from(rows).forEach(row => {
+                new Sortable(row, {
+                    group: 'shared', // set both lists to same group
+                    animation: 500
+                });
+            });
+            this.images = this.$store.state.localStorage.list;
+        },
 
-  }
+
+    }
 </script>
 <style>
   img {
